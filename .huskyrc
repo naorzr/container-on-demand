@@ -1,0 +1,6 @@
+{
+  "hooks": {
+    "pre-commit": "yarn format --staged",
+    "pre-push": "yarn lint-all"
+  }
+}

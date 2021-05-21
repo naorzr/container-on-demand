@@ -1,0 +1,23 @@
+{
+  "extends": "../../tsconfig-base.json",
+  "compilerOptions": {
+    "lib": [
+      "es2019"
+    ],
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "outDir": "build/",
+    "types": [
+      "@types/mocha",
+      "node"
+    ],
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react"
+  },
+  "sideEffects": false,
+  "include": [
+    "src",
+    "index.ts"
+  ]
+}

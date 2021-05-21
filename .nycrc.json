@@ -1,0 +1,9 @@
+{
+  "cache": false,
+  "all": true,
+  "extends": "nyc-config-tsx",
+  "exclude": [".yarn", "**/*.js", "**/build", "**/test","**/*.test.*"],
+  "reporter": [
+    "html"
+  ]
+}

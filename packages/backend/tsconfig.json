@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig-base.json",
+  "compilerOptions": {
+    "lib": ["es2019", "dom"],
+    "module": "commonjs",
+    // Search under node_modules for non-relative imports.
+    "moduleResolution": "Node",
+    "outDir": "build/",
+    "types": ["@types/node"]
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": ["**/*.test.ts"]
+}

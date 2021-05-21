@@ -1,0 +1,88 @@
+{
+  "name": "@broccoli/frontend",
+  "version": "3.6.2",
+  "private": true,
+  "scripts": {
+    "start:dev": "PORT=9900 react-app-rewired start",
+    "build": "INLINE_RUNTIME_CHUNK=false react-app-rewired build",
+    "test": "CI=true react-app-rewired test --passWithNoTests",
+    "eject": "react-scripts eject",
+    "serve": "serve -s build -l 3061",
+    "start": "npm run build && node server.js",
+    "lint": "tsc && eslint --no-error-on-unmatched-pattern ./src/**/* --ext .js,.ts,.tsx,.jsx",
+    "lint:fix": "npm run lint --fix"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.1%",
+      "not dead",
+      "not op_mini all",
+      "IE 11"
+    ],
+    "development": [
+      ">0.1%",
+      "not dead",
+      "not op_mini all",
+      "IE 11"
+    ]
+  },
+  "dependencies": {
+    "@broccoli/shared": "3.6.2",
+    "@chakra-ui/icons": "^1.0.12",
+    "@chakra-ui/react": "^1.6.0",
+    "@emotion/react": "11",
+    "@emotion/styled": "11",
+    "@types/node": "^14.14.10",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "axios": "^0.21.1",
+    "chakra-ui-markdown-renderer": "^1.1.0",
+    "concurrently": "^5.3.0",
+    "dotenv": "^8.2.0",
+    "fastify": "^3.9.2",
+    "fastify-static": "^3.3.0",
+    "fp-ts": "^2.9.0",
+    "framer-motion": "4",
+    "highlight.js": "^10.7.2",
+    "io-ts": "^2.2.13",
+    "markdown-it": "^12.0.6",
+    "normalize.css": "^8.0.1",
+    "qs": "^6.9.4",
+    "react": "^17.0.1",
+    "react-app-polyfill": "^2.0.0",
+    "react-app-rewired": "^2.1.6",
+    "react-dom": "^17.0.1",
+    "react-google-login": "^5.2.2",
+    "react-icons": "^4.2.0",
+    "react-markdown": "^6.0.1",
+    "react-redux": "^7.2.4",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1",
+    "react-syntax-highlighter": "^15.4.3",
+    "remark-gfm": "^1.0.0",
+    "setimmediate": "^1.0.5",
+    "smoothscroll-polyfill": "^0.4.4",
+    "typescript": "^4.1.2"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^12.0.1",
+    "@types/qs": "^6.9.5",
+    "@types/react-redux": "^7.1.16",
+    "@types/react-router-dom": "^5.1.7",
+    "@types/react-syntax-highlighter": "^13.5.0",
+    "@types/smoothscroll-polyfill": "^0.3.1",
+    "csstype": "^3.0.5",
+    "customize-cra": "^1.0.0",
+    "eslint": "^7.14.0",
+    "eslint-config-prettier": "^6.15.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.2",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "serve": "^11.3.2",
+    "typesafe-actions": "^5.1.0"
+  }
+}

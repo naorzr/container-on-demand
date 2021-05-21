@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "typeRoots": ["./node_modules/@types"],
+    "sourceMap": true,
+    "removeComments": false,
+    "noImplicitAny": true,
+    "declarationMap": true,
+    "lib": ["es2019", "dom"],
+    // Target latest version of ECMAScript.
+    "target": "es6",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    // Process & infer types from .js files.
+    "allowJs": true,
+    // Don't emit; allow Babel to transform files.
+    "noEmit": true,
+    // Enable strictest settings like strictNullChecks & noImplicitAny.
+    "strict": true,
+    "module": "commonjs",
+    // Disallow features that require cross-file information for emit.
+    "isolatedModules": true,
+    // Import non-ES modules as default imports.
+    "esModuleInterop": true,
+    "outDir": "build/",
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "plugins": [{ "transform": "ts-optchain/transform" }]
+  },
+  "exclude": ["**/build/**", "**/coverage/**", "**/dist/**", "**/node_modules/**"]
+}

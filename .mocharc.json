@@ -1,0 +1,8 @@
+{
+  "timeout": "120000",
+  "require" : [
+    "ts-node/register"
+  ],
+  "package": "./package.json",
+  "ui": "bdd"
+}

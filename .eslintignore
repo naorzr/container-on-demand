@@ -1,0 +1,3 @@
+**/*.Dockerfile
+**/dv-scripts/*.js
+**/*.pac

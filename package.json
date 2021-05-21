@@ -1,0 +1,44 @@
+{
+  "name": "furry-chainsaw",
+  "version": "3.6.2",
+  "main": "index.js",
+  "engines": {
+    "node": ">=12 <15"
+  },
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "bump:version": "yarn workspaces foreach -A exec yarn version ",
+    "start": "yarn workspace @broccoli/backend start",
+    "bump:version:patch": "yarn run bump:version patch --immediate",
+    "bump:version:minor": "yarn run bump:version minor --immediate",
+    "bump:version:major": "yarn run bump:version major --immediate",
+    "build": "yarn workspaces foreach -p run build",
+    "clean:all:build": "yarn dlx rimraf -r ./packages/**/build",
+    "pack:all": "yarn workspaces foreach -p -i --no-private exec yarn pack",
+    "publish:all": "yarn run build:all && yarn workspaces foreach -p -i --no-private exec npm publish",
+    "lint-all": "yarn workspaces foreach -p run lint",
+    "test:coverage": "nyc yarn workspaces foreach -p -v -i --exclude .yarn run test",
+    "test:coverage:ci": "nyc --reporter cobertura yarn workspaces foreach -p -v -i --exclude .yarn run test",
+    "format": "pretty-quick --pattern \"**/*.*(js|ts|jsx|tsx)\""
+  },
+  "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.7",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
+    "nyc-config-tsx": "^0.1.0",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1",
+    "serve": "^11.3.0",
+    "source-map-support": "^0.5.19"
+  },
+  "dependencies": {
+    "concurrently": "^5.2.0",
+    "eslint-config-google": "latest",
+    "global": "^4.4.0"
+  }
+}

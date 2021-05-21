@@ -1,0 +1,11 @@
+# idea
+.idea*
+
+# API keys and secrets
+.env
+
+# Build Files
+build
+.nyc_output
+coverage
+local.log
