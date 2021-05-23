@@ -1,15 +1,17 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './screens/Home';
+import Repl from './screens/Repl';
 
 const App: React.FunctionComponent = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/">
-          <div>
-            <h1>Hello</h1>
-
-          </div>
+        <Route exact={true} path="/">
+          <Home />
+        </Route>
+        <Route path="/machines/:id">
+          <Repl />
         </Route>
       </Switch>
     </Router>

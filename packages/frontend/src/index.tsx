@@ -1,17 +1,18 @@
-import 'setimmediate';
 import 'normalize.css';
+import 'xterm/css/xterm.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { ChakraProvider } from '@chakra-ui/react';
-import { Provider } from 'react-redux';
-// import store from './redux/store';
+import { RecoilRoot } from 'recoil';
 ReactDOM.render(
   <React.StrictMode>
     <ChakraProvider>
-      <App />
+      <RecoilRoot>
+        <App />
+      </RecoilRoot>
     </ChakraProvider>
   </React.StrictMode>,
   document.getElementById('root')
