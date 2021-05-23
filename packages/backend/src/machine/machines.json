@@ -1,0 +1,18 @@
+{
+  "machineTypes": {
+    "node-12": {
+      "image": "node:12",
+      "entrypoint": ["tail","-f","/dev/null"],
+      "repl": ["node"]
+    },
+    "redis": {
+      "image": "redis",
+      "repl": ["redis-cli"]
+    },
+    "ubuntu": {
+      "image": "ubuntu",
+      "entrypoint": ["tail","-f","/dev/null"],
+      "repl": ["bash"]
+    }
+  }
+}
