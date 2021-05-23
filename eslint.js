@@ -18,7 +18,7 @@ module.exports = {
     'no-console': 'off',
     'no-undef': 'off',
     '@typescript-eslint/indent': 'off',
-    '@typescript-eslint/no-explicit-any': ['error'],
+    '@typescript-eslint/no-explicit-any': ['warn'],
     '@typescript-eslint/no-inferrable-types': ['off'],
     '@typescript-eslint/member-delimiter-style': ['off'],
     '@typescript-eslint/interface-name-prefix': ['off'],

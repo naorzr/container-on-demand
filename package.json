@@ -3,7 +3,7 @@
   "version": "3.6.2",
   "main": "index.js",
   "engines": {
-    "node": ">=12 <15"
+    "node": ">=14 <15"
   },
   "private": true,
   "workspaces": [
@@ -11,7 +11,8 @@
   ],
   "scripts": {
     "bump:version": "yarn workspaces foreach -A exec yarn version ",
-    "start": "yarn workspace @broccoli/backend start",
+    "start:backend": "yarn workspace @broccoli/backend start:ts",
+    "start:frontend": "yarn workspace @broccoli/frontend start:dev",
     "bump:version:patch": "yarn run bump:version patch --immediate",
     "bump:version:minor": "yarn run bump:version minor --immediate",
     "bump:version:major": "yarn run bump:version major --immediate",
