@@ -1,17 +1,13 @@
 import React, { useEffect } from 'react';
 import { XTerm } from 'xterm-for-react';
-import { useParams } from 'react-router-dom';
-import { useRecoilState } from 'recoil';
-import ActiveMachines from '../../atoms/ActiveMachines';
 import { Box } from '@chakra-ui/react';
+import { Duplex } from 'stream';
 
-const MachineRepl = () => {
+const MachineRepl = (props: { machineStream?: Duplex }) => {
   const xtermRef = React.useRef<XTerm>(null);
-  const { id } = useParams<{ id: string }>();
-  const [activeMachines] = useRecoilState(ActiveMachines);
+  const { machineStream } = props;
   useEffect(() => {
-    const _stream = activeMachines.get(id)?.stream;
-    _stream?.on('data', (data: unknown[]) => {
+    machineStream?.on('data', (data: unknown[]) => {
       const xtermCurrent = xtermRef.current;
 
       for (let i = 0; i < data.length; i++) {
@@ -20,13 +16,12 @@ const MachineRepl = () => {
         }
       }
     });
-  }, []);
+  }, [machineStream]);
   return (
     <Box>
       <XTerm
         onData={(data) => {
-          const _stream = activeMachines.get(id)?.stream;
-          _stream?.write(data);
+          machineStream?.write(data);
         }}
         ref={xtermRef}
       />

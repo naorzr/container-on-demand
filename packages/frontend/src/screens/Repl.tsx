@@ -8,11 +8,12 @@ import MachineRepl from '../components/Machine/Repl';
 const Repl = () => {
   const { id } = useParams<{ id: string }>();
   const [activeMachines] = useRecoilState(ActiveMachines);
+  const _stream = activeMachines.get(id)?.stream;
 
   return (
     <VStack>
       <Text fontWeight={'bold'}>{`Connected to ${id}`}</Text>
-      <MachineRepl />
+      <MachineRepl machineStream={_stream} />
       {!activeMachines.has(id) && (
         <Alert status="warning">
           <AlertIcon />
